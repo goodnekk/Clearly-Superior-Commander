@@ -1,5 +1,6 @@
 const m = require("mithril")
 const fs = require('fs');
+const exec = require('child_process').exec;
 
 
 
@@ -15,6 +16,7 @@ function update(){
     fs.readdir(location, (err, f) => {
       files = f.filter((f)=>f[0]!==".").map(file => {
           return {
+              path: location+file,
               name: file,
               directory: fs.lstatSync(location+file).isDirectory()
           }
@@ -43,16 +45,25 @@ document.addEventListener("keydown", function(e){
     }
 
     if(e.key==="ArrowRight"){
-        stack.push(files[selected].name)
-        posstack.push(selected)
-        selected = 0
-        update()
+        if(files[selected].directory){
+            stack.push(files[selected].name)
+            posstack.push(selected)
+            selected = 0
+            update()
+        } else {
+            console.log("xdg-open "+files[selected].path);
+            exec("xdg-open "+files[selected].path, function(err, data) {
+                console.log(err)
+                console.log(data.toString());
+            });
+
+        }
     }
 
     if(e.key==="ArrowLeft"){
         if(stack.length>0){
             stack.pop()
-            selected = posstack.pop()    
+            selected = posstack.pop()
         }
 
         update()
