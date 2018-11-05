@@ -1,0 +1,28 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 10pt;
+}
+
+.file {
+    padding: 2px;
+}
+
+.file__name, .file__type {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.file__name {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file.--selected{
+    background-color: blue;
+    color: white;
+}

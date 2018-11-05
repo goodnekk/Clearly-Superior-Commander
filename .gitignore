@@ -1,0 +1,5 @@
+node_modules
+/resources/*.gif
+/resources/*.jpg
+/resources/*.jpeg
+/resources/*.mkv
