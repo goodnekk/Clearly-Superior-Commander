@@ -3,6 +3,7 @@ body {
     padding: 0px;
     font-family: "Open Sans", sans-serif;
     font-size: 10pt;
+    background-color: #fbf9fd;
 }
 
 .file {
@@ -22,7 +23,46 @@ body {
     text-overflow: ellipsis;
 }
 
-.file.--selected{
-    background-color: blue;
-    color: white;
+.file.--selected {
+    background-color: #ebebec;
+}
+
+.file.--directory {
+    font-weight: 600;
+}
+
+.filelist {
+    padding: 10px;
+    margin-bottom: 200px;
+}
+
+.position {
+    padding: 10px;
+}
+
+.position__segment {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+i {
+    vertical-align: middle;
+    font-size: 12pt;
+    color: #adadad;
+    margin-right: 10px;
+}
+
+.console {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    border-top: 1px solid grey;
+    height: 200px;
+    background-color: #fbf9fd;
+}
+
+input.commandline {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
 }

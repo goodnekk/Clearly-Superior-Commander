@@ -11,6 +11,7 @@
     "electron": "^1.8.4"
   },
   "dependencies": {
-    "mithril": "^1.1.6"
+    "mithril": "^1.1.6",
+    "shelljs": "^0.8.2"
   }
 }
